@@ -2,9 +2,9 @@ import api from '@/services/api'
 
 export default {
   findDocument(body) {
-    return api().get(`http://localhost:8080/search?${body}`)
+    return api().get(`http://165.22.208.187:8080/search?query=${body}`)
   },
-  addNewCompany(params) {
-    return api().post('companies', params)
+  getDocument(document) {
+    return api().get(`http://165.22.208.187:8080${document}`)
   }
 }

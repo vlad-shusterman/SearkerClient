@@ -1,13 +1,14 @@
 <template>
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="input-group md-form form-sm form-1 pl-0 mt-5">
-        <div class="input-group-prepend">
-          <span class="input-group-text purple lighten-3" id="basic-text1" @click="search()">
-            <i class="fas fa-search text-white" aria-hidden="true"></i>
-          </span>
-        </div>
-        <input class="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search" v-model="searchLine">
+    <div class="row justify-content-center mt-5 ml-5">
+      <div class="col-10 mt-5">
+        <form class="form-inline mt-5">
+          <div @click="search()" >
+            <i class="fas fa-search search-page-icon" aria-hidden="true"/>
+          </div>
+          <input class="form-control form-control-md ml-3 w-75" type="text" placeholder="Search"
+                 aria-label="Search" v-model="searchLine">
+        </form>
       </div>
     </div>
   </div>
@@ -22,7 +23,8 @@ export default {
   name: 'StartPage',
   data () {
     return {
-      searchLine: ''
+      searchLine: '',
+      searchResponse: ''
     }
   },
   components: {
@@ -30,14 +32,18 @@ export default {
     FontAwesomeIcon
   },
   methods: {
-    async search () {
-      UserService.findDocument(this.searchLine)
-      this.$router.push({path: `/search?query=${this.searchLine}`})
+    search () {
+      UserService.findDocument(this.searchLine).then((result) => {
+        this.searchResponse = result
+        this.$emit('documents', result.data.documents)
+      })
     }
   }
 }
 </script>
 
 <style scoped>
-
+.search-page-icon {
+  cursor: pointer;
+}
 </style>
