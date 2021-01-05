@@ -17,7 +17,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.24",
     "@fortawesome/free-solid-svg-icons": "^5.11.1",
     "@fortawesome/vue-fontawesome": "^0.1.7",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.1",
     "bootstrap-material-design-icons": "^2.2.0",
     "connect-history-api-fallback": "^1.6.0",
