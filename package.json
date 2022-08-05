@@ -23,7 +23,7 @@
     "connect-history-api-fallback": "^1.6.0",
     "font-awesome-icons": "^1.6.0",
     "font-awesome-sass": "^4.7.0",
-    "mongoose": "^5.5.8",
+    "mongoose": "^5.7.5",
     "vue": "^2.5.2",
     "vue-material-design-icons": "^4.1.0",
     "vue-router": "^3.0.1",
